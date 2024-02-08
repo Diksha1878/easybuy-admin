@@ -1,1 +1,1 @@
-# easybuy E-Commerce admin
+# Easybuy E-Commerce admin
