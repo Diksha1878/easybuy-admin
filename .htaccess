@@ -1,0 +1,25 @@
+RewriteEngine On
+
+<Files "sitekey.crt">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+<Files "log.txt">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^product_details/([A-Za-z0-9-]+)/?$    product_details.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^edit_combo/([A-Za-z0-9-]+)/?$    edit_combo.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^order_details/([A-Za-z0-9-]+)/?$    order_details.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^similar_products/([A-Za-z0-9-]+)/?$    similar_products.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^similar_combos/([A-Za-z0-9-]+)/?$    similar_combos.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^order-list/([A-Za-z0-9-]+)/?$    order-list.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^user_details/([A-Za-z0-9-]+)/?$    user_details.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^used_coupon/([A-Za-z0-9-]+)/?$    used_coupon.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^wallet/([A-Za-z0-9-]+)/?$    wallet.php?id=$1    [NC,L]    # Process product_details
+RewriteRule ^edit/pop_up_ad/([A-Za-z0-9-]+)/?$    edit_pop_up_ads.php?id=$1    [NC,L]    # Process pop up ad editing
+
+RewriteRule ^([^\.]+)/?$ $0.php [NC,L]
